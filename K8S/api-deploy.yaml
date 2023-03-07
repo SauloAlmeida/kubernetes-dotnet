@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: # deployment name
+  name: api-deployment
+spec: #specify the pods and the behavior of the deployment
+  replicas: 1 # if the container is destroyed it will run a new one
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: sholiveira/k8s-dotnet
+
+# kubectl version
+# cd K8S
+# kubectl apply -f api-deploy.yaml
+# kubectl get deployments
+# kubectl get pods
+
+# kubectl delete deployment api-deployment
