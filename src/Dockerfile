@@ -13,6 +13,3 @@ ENV ASPNETCORE_URLS=http://+:5000
 EXPOSE 5000
 
 ENTRYPOINT [ "dotnet", "KubernetesDotnet.dll"]
-
-# docker build sholiveira/k8s-dotnet .
-# docker push sholiveira/k8s-dotnet
